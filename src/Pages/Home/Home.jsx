@@ -44,6 +44,6 @@ export const Home = () => {
      
    }, []);
 
-
+console.log(isLoading);
   return <MoviesList movies={items} />;
 };
