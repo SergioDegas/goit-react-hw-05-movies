@@ -6,25 +6,20 @@ import Search from 'components/Search/Search';
 import { Title } from 'Pages/MoviesDetails/MoviesDetails.styled';
 import { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { useSearchParams } from 'react-router-dom';
 
 
 export const Movies = () => {
-  const [query, setQuery] = useState('');
-
-
-  const inputValue = query => {
-    setQuery(query);
- 
-
-    setItems([]);
-    // console.log(query);
-  };
+   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
   const [items, setItems] = useState([]);
+    const query = searchParams.get('query');
+  
+
   useEffect(() => {
     const fetch = async () => {
       try {
-        if (query === '') {
+        if (!query ) {
           return
         }
         setIsLoading(true);
@@ -56,11 +51,17 @@ export const Movies = () => {
     };
     fetch();
   }, [query]);
+    const inputValue = query => {
+      setSearchParams({ query: query });
+
+      setItems([]);
+      // console.log(query);
+    };
   return (
     <>
       <main>
         <Search onSubmit={inputValue} />
-        {items.length > 0 && items ? (
+        {items.length > 0 ? (
           <MoviesList movies={items} />
         ) : (
           <Title>To search, write the name of the movie in the form </Title>
