@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import {  Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import posterBg from '../../utilities/img/hacker-3342696_640.jpg';
-import { AdditionalInfoItem, AdditionalTitle, Genres, GoBack, Image, Info, InfoTitle, MovieCard, Title } from './MoviesDetails.styled';
+import { AdditionalInfoItem, AdditionalTitle, Genres, GoBack, Image, Info, InfoTitle, MovieCard, } from './MoviesDetails.styled';
 
 
 export const MoviesDetails =() => {
