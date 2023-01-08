@@ -1,14 +1,36 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 
 export const Container = styled.div`
-  max-width: ${({ theme }) => `${theme.spacing(125)}`};
-  margin-top: ${({ theme }) => `${theme.spacing(10)}`};
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  padding: ${({ theme }) => `${theme.spacing(10)}`};
-  border: solid 1px grey;
+  margin-right: 50px;
+  margin-left: 50px;
+`;
+export const ContainerFlex = styled.div`
+display: flex;
+ justify-content: center;
+ margin-bottom: 20px;
+ margin-top: 20px;
+`;
+
+export const StyledLink = styled(NavLink)`
+  text-decoration: none;
+  display: inline-block;
+
+  font-size: 30px;
+  color: black;
+  margin-right: 20px;
+  cursor: pointer;
+  :last-child {
+    margin: 0;
+  }
+
+  &.active {
+    color: #1aa3ff;
+  }
+  :hover {
+    color: #8aa3ff;
+  }
 `;
 
 export const H1 = styled.h1`

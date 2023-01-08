@@ -1,7 +1,8 @@
 import { getTrendingMovies } from 'Api/Api';
+import Loader from 'components/Loader/Loader';
 import MoviesList from 'components/MoviesList/MoviesList';
 import { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -31,7 +32,7 @@ export const Home = () => {
                 }
               );
 
-              setItems(items => [...items, ...imagesArray]);
+              setItems(imagesArray);
            
             }
          } catch (error) {
@@ -44,6 +45,14 @@ export const Home = () => {
      
    }, []);
 
-console.log(isLoading);
-  return <MoviesList movies={items} />;
+// console.log(isLoading);
+  return (
+    <>
+      <main>
+        <MoviesList movies={items} />
+        {isLoading && <Loader />}
+        <Toaster />
+      </main>
+    </>
+  );
 };
