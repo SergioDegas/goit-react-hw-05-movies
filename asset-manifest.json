@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/goit-react-hw-05-movies/static/js/main.c38b1d23.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.f93d80bf.js",
     "static/media/hacker-3342696_640.jpg": "/goit-react-hw-05-movies/static/media/hacker-3342696_640.84acf86f1ba49541d3a9.jpg",
     "index.html": "/goit-react-hw-05-movies/index.html",
-    "main.c38b1d23.js.map": "/goit-react-hw-05-movies/static/js/main.c38b1d23.js.map"
+    "main.f93d80bf.js.map": "/goit-react-hw-05-movies/static/js/main.f93d80bf.js.map"
   },
   "entrypoints": [
-    "static/js/main.c38b1d23.js"
+    "static/js/main.f93d80bf.js"
   ]
 }
