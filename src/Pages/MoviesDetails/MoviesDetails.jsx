@@ -3,7 +3,7 @@ import { Container } from 'components/App/App.styled';
 import Loader from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import {  Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
+import {  Outlet, useLocation,  useParams } from 'react-router-dom';
 import posterBg from '../../utilities/img/hacker-3342696_640.jpg';
 import { AdditionalInfoItem, AdditionalTitle, Genres, GoBack, Image, Info, InfoTitle, MovieCard, } from './MoviesDetails.styled';
 
@@ -13,7 +13,7 @@ export const MoviesDetails =() => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   
-    const navigate = useNavigate();
+
   const location = useLocation();
   const subLocation = location.state.from;
   // console.log('id', moviesId);
@@ -49,7 +49,7 @@ export const MoviesDetails =() => {
     fetch();
   }, [moviesId]);
 
-  const onGoBack = () => navigate(location?.state?.from ?? '/');
+  const onGoBack = location?.state?.from ?? '/';
 const { original_title,
           genres,
           overview,
