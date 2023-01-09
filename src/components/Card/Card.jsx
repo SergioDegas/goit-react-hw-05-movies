@@ -43,8 +43,9 @@ function Card() {
   
   return (
     <>
-      <Ul>
-        {items.map(({ id, profile_path, original_name, character }) => {
+  {items.length > 0 && items ?  <Ul>
+      {items.map(
+        ({ id, profile_path,  original_name, character }) => {
           return (
             <Actors key={id}>
               <ActorsImage
@@ -65,10 +66,13 @@ function Card() {
               </div>
             </Actors>
           );
-        })}
+        }
+      )}
       </Ul>
+      : <p> No cards</p>}
+
       {isLoading && <Loader />}
-    </>
+      </>
   );
 }
 
