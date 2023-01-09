@@ -24,20 +24,10 @@ export const MoviesDetails =() => {
     const fetch = async () => {
       try {
         setIsLoading(true);
-        const {
-          original_title,
-          genres,
-          overview,
-          poster_path,
-          release_date,
-          vote_average,
-          vote_count,
-        } = await getMovieDetails(moviesId);
-        // console.log(results);
-        const imagesArray = {original_title,genres, overview,poster_path, release_date,vote_average,
-          vote_count
-        }
-    setItems(imagesArray);
+        const result = await getMovieDetails(moviesId);
+        // console.log(result);
+        
+    setItems(result);
            
 
       } catch (error) {
